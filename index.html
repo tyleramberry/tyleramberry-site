@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tyler Amberry — AI Product Builder</title>
+<meta name="description" content="Tyler Amberry builds AI products that do real work: agent teams, full-stack apps, and personal AI systems, shipped to production.">
+<meta property="og:title" content="Tyler Amberry — AI Product Builder">
+<meta property="og:description" content="Agent teams, full-stack AI apps, and personal AI systems, shipped to production.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="mark" href="#top">TA</a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#how">How I build</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero wrap">
+  <p class="eyebrow">AI Product Builder · BYU Marriott MSB</p>
+  <h1>I build AI products that <em>do real work</em>, and I ship them.</h1>
+  <p class="lede">I scope, design, and build the whole thing: agent teams, full-stack apps, and the systems that run my own life and business. I'm a product owner who writes code with AI and puts the result in production.</p>
+  <div class="hero-cta">
+    <a class="btn" href="#work">See the work</a>
+    <a class="btn ghost" href="mailto:tyleramberry@gmail.com">tyleramberry@gmail.com</a>
+  </div>
+  <dl class="stats">
+    <div><dt>6</dt><dd>products in this portfolio</dd></div>
+    <div><dt>9</dt><dd>AI agents on my software-factory team</dd></div>
+    <div><dt>114</dt><dd>commits to Sundae since Aug 4, 2026</dd></div>
+  </dl>
+</section>
+
+<section id="work" class="wrap">
+  <h2 class="section-title"><span>01</span> Selected work</h2>
+
+  <!-- Sundae -->
+  <article class="project feature">
+    <div class="project-head">
+      <p class="tag">Consumer SaaS · Live in production</p>
+      <h3>Sundae Planner</h3>
+      <p class="sum">An AI weekly-planning coach. You talk through the roles you play in life, it helps you plan actions for each one, then puts the plan on your Google Calendar. A daily check-in follows up and keeps score.</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <h4>What I built</h4>
+        <ul>
+          <li>A conversational weekly session that turns a plan into confirmed calendar blocks. Nothing is written to your calendar until you approve it.</li>
+          <li>A daily cron that follows up by email and reconciles your goals against what actually happened</li>
+          <li>Onboarding, trials and Stripe billing, analytics, and a custom domain</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product calls</h4>
+        <ul>
+          <li>One function decides whether a goal counts as "done," so every screen shows the same score</li>
+          <li>The conversation engines don't depend on any one channel, so web, email, and text can all use the same brain</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-foot">
+      <p class="stack">Next.js 16 · Supabase · Claude API · Google Calendar · Stripe · Resend · Vercel</p>
+      <a class="link" href="https://sundaeplanner.com" target="_blank" rel="noopener">sundaeplanner.com ↗</a>
+    </div>
+  </article>
+
+  <!-- Buzz -->
+  <article class="project">
+    <div class="project-head">
+      <p class="tag">Agent team · Software factory</p>
+      <h3>Buzz software factory</h3>
+      <p class="sum">A team of nine AI agents that ships Sundae features the way a real product team does, with roles, handoffs, and a QA gate nobody gets to skip.</p>
+    </div>
+    <ol class="pipeline">
+      <li><b>Tyler</b><span>scopes the feature</span></li>
+      <li><b>Greg</b><span>writes the PRD</span></li>
+      <li><b>Brad</b><span>builds it, then runs types, lint, and build</span></li>
+      <li><b>Quinton</b><span>QA against six repo rules</span></li>
+      <li><b>SHIP</b><span>only after Quinton signs off</span></li>
+    </ol>
+    <div class="project-body single">
+      <div>
+        <h4>Why it matters</h4>
+        <p>Most "AI coding" is one person and one chatbot. This is a process: specs come before code, every diff is reviewed, and every commit traces back to its PRD. I set up the process and the rules; the agents do the work in shared channels where I can step in.</p>
+      </div>
+    </div>
+    <div class="project-foot">
+      <p class="stack">Buzz (Nostr relay) · Claude Code · Codex · Goose · shared PRDs and runbooks</p>
+    </div>
+  </article>
+
+  <!-- RFP -->
+  <article class="project">
+    <div class="project-head">
+      <p class="tag">Client build · via Streak Advisors</p>
+      <h3>Grant &amp; RFP agent platform</h3>
+      <p class="sum">A full-stack app for a grant-writing and government-contracting client. An orchestrator reads each request and sends it to the right specialist agent, and all the agents share one project memory.</p>
+    </div>
+    <div class="agents">
+      <div><b>Orchestrator</b><span>sorts each task and hands it to the right agent</span></div>
+      <div><b>Grant specialist</b><span>checks eligibility, drafts letters of intent, runs compliance checks</span></div>
+      <div><b>Contracting specialist</b><span>reads RFPs, builds a compliance matrix, flags gaps</span></div>
+      <div><b>Business assistant</b><span>handles tasks, activity logs, and research sub-agents</span></div>
+      <div><b>Personal agent</b><span>calendar and email, with a data wall that blocks business data</span></div>
+    </div>
+    <div class="project-body single">
+      <div>
+        <h4>What shipped</h4>
+        <p>Express API, React front end, Supabase auth and memory, a knowledge base seeded with the client's own data, PDF upload, and Google Drive, Gmail, and Calendar connected through MCP. Built in daily sprints, with each day's goal tracked in commits.</p>
+      </div>
+    </div>
+    <div class="project-foot">
+      <p class="stack">Node/Express · React + Vite · Claude API · Supabase · MCP · Railway + Vercel</p>
+      <span class="note">Client details kept private</span>
+    </div>
+  </article>
+
+  <!-- Second brain -->
+  <article class="project">
+    <div class="project-head">
+      <p class="tag">Personal AI system</p>
+      <h3>Second brain / personal AGI</h3>
+      <p class="sum">A personal operating system I own: a markdown library of everything I know, plus skills (written procedures an agent follows) and scheduled jobs that run on top of it.</p>
+    </div>
+    <dl class="mini-stats">
+      <div><dt>113</dt><dd>linked knowledge pages</dd></div>
+      <div><dt>23</dt><dd>reusable agent skills</dd></div>
+      <div><dt>7</dt><dd>scheduled jobs</dd></div>
+    </dl>
+    <div class="project-body single">
+      <div>
+        <h4>How it works</h4>
+        <p>Every session starts by reading a router file, then loads only the skill it needs: daily briefs, meeting prep, inbox triage, class notes, log capture. It runs on any model (Hermes, Claude Code, Codex), so I'm not locked into a vendor. The rule: judgment goes to the model, and math goes to scripts.</p>
+      </div>
+    </div>
+    <div class="project-foot">
+      <p class="stack">Markdown + Obsidian · Hermes · Claude Code · cron · Python</p>
+    </div>
+  </article>
+
+  <!-- CFO -->
+  <article class="project">
+    <div class="project-head">
+      <p class="tag">Agent · Built on the second brain</p>
+      <h3>Household CFO agent</h3>
+      <p class="sum">A budgeting agent for my family. It pulls in bank, Venmo, and Mercury exports, sorts every transaction into a budget bucket, runs weekly check-ins and a monthly "money date," and answers "can we afford this?" by text.</p>
+    </div>
+    <div class="project-body">
+      <div>
+        <h4>Design principles</h4>
+        <ul>
+          <li><b>Never invents a number.</b> Rows it can't read go to a review list instead of being guessed.</li>
+          <li>Python scripts do all the math. The model only handles conversation and judgment calls.</li>
+          <li>Everything is CSV and markdown that a person can read and edit.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rhythm</h4>
+        <ul>
+          <li>Weekly: pace, overspending, and bills due in the next 14 days</li>
+          <li>Monthly: set each bucket's budget, audit subscriptions, sync bills to the calendar</li>
+          <li>Quarterly: big-picture review plus estimated-tax reminders</li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-foot">
+      <p class="stack">Python · iMessage (AppleScript) · Google Calendar · Markdown dashboards</p>
+      <span class="note">Real financial data stays private</span>
+    </div>
+  </article>
+
+  <!-- Space Tiger -->
+  <article class="project">
+    <div class="project-head">
+      <p class="tag">Web design</p>
+      <h3>Space Tiger AI Systems redesign</h3>
+      <p class="sum">A marketing-site redesign for an AI systems company. The positioning is AI that's plugged into your own tools and does real work, with a person in the loop. Bold type, a mission-control feel, and a clear path to booking a call.</p>
+    </div>
+    <a class="preview" href="work/spacetiger-redesign/" target="_blank" rel="noopener">
+      <img src="img/spacetiger.jpg" alt="Space Tiger redesign homepage" loading="lazy">
+    </a>
+    <div class="project-foot">
+      <p class="stack">HTML · CSS · Bebas Neue / Oswald / JetBrains Mono</p>
+      <a class="link" href="work/spacetiger-redesign/" target="_blank" rel="noopener">View the design ↗</a>
+    </div>
+  </article>
+</section>
+
+<section id="how" class="wrap">
+  <h2 class="section-title"><span>02</span> How I build</h2>
+  <div class="principles">
+    <div><h4>Proof over "it compiled"</h4><p>It isn't done until it's running and I've watched it work: types, lint, a build, and a real test in the product.</p></div>
+    <div><h4>People decide, agents do</h4><p>Anything that matters, like writing to a calendar, shipping code, or spending money, waits for a person to approve it.</p></div>
+    <div><h4>Models judge, code calculates</h4><p>LLMs handle language and judgment. Arithmetic, scheduling, and anything that needs an exact answer goes to deterministic code.</p></div>
+    <div><h4>Process is a product</h4><p>Specs, handoffs, and QA gates are what let a team of agents ship safely instead of creating chaos.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap contact">
+  <h2>Have something worth building?</h2>
+  <p>I'm open to AI product roles and select builds.</p>
+  <div class="hero-cta">
+    <a class="btn" href="mailto:tyleramberry@gmail.com">Email me</a>
+    <a class="btn ghost" href="https://github.com/tyleramberry" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 Tyler Amberry</span>
+  <span>Built by hand and with Claude Code</span>
+</footer>
+
+</body>
+</html>
