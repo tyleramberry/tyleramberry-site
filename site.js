@@ -23,8 +23,7 @@
      ------------------------------------------------------------------ */
   var TICKER = [
     ["Portfolio", "rebuilt as a static, AI-native site. No framework, no build step"],
-    ["MySI", "first outside tester went from interview to one winning model in ~15 min, for $0.07"],
-    ["Homeroom", "decisions 001 + 002 logged: students first, portfolio first"],
+    ["My SI", "first outside tester went from interview to one winning model in ~15 min, for $0.07"],
     ["Second brain", "113 linked pages, 23 agent skills, 7 scheduled jobs"],
     ["Sundae Planner", "live in production at sundaeplanner.com"],
     ["Space Tiger AI", "Blueprint-call prep turned into a one-command hypothesis-doc skill"],
@@ -120,7 +119,7 @@
     { g: "Case studies", t: "Sundae Planner", h: "products.html#sundae", i: "calendar", k: "weekly planning coach saas" },
     { g: "Case studies", t: "Grant and RFP agent team", h: "products.html#rfp-agents", i: "layers", k: "govcon contracting orchestrator" },
     { g: "Case studies", t: "Personal super intelligence", h: "products.html#harness", i: "cpu", k: "second brain buzz software factory cfo harness" },
-    { g: "Case studies", t: "Homeroom to MySI", h: "products.html#homeroom", i: "cap", k: "msb 341 student benchmark models" },
+    { g: "Case studies", t: "My SI", h: "products.html#mysi", i: "cap", k: "msb 341 student benchmark models" },
     { g: "Case studies", t: "OpenCal", h: "products.html#opencal", i: "calendar", k: "open source booking pickup scheduler tidycal" },
     { g: "Case studies", t: "Hermes Multiplayer", h: "products.html#multiplayer", i: "command", k: "team chat relay plugin hackathon" },
     { g: "Contact", t: "Email Tyler", h: "mailto:" + EMAIL, i: "mail", k: "contact hire" },
