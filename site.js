@@ -273,6 +273,13 @@
     initReveal();
     initPalette();
   }
+  // mailto fails silently with no mail app set up, so every email link also copies the address
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (!a || !navigator.clipboard) return;
+    navigator.clipboard.writeText(EMAIL).then(function () { toast("Email copied: " + EMAIL); }, function () {});
+  });
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
 
