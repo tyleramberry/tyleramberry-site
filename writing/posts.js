@@ -5,6 +5,51 @@
    ========================================================================== */
 window.POSTS = [
   {
+    slug: "something-tells-me-you-work-more-not-less-now-that-you-have",
+    title: "Something tells me you work more, not less, now that you have AI...",
+    date: "2026-11-10",
+    source: "linkedin",
+    summary: "Something tells me you work more, not less, now that you have AI...",
+    body: "Something tells me you work more, not less, now that you have AI...\n\nIt seems intuitive that using AI would save us time and enable us to move to something like a 3-day workweek but that doesn't seem to be the case anywhere \n\nIt's almost paradoxical that AI allows me to do more tasks than I ever could before, but while doing the tasks that I couldn't do before, I in turn discover even more tasks that I didn't know were possible to do. I therefore want to do them now, making the number of tasks that I have/want to do grow by the day.\n\nWe see this throughout history. Examples like steam engines increasing coal consumption because cheaper energy made coal worth using for more things. Home tech like washing machines and dishwashers actually made more/different work for the mothers that originally did the tasks by hand.\n\nI call it the Amberry paradox. Lmk if it catches on.",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7526062222482219009/"
+  },
+  {
+    slug: "if-you-know-how-your-car-works-you-ll-always-be-able-to-find",
+    title: "If you know how your car works, you'll always be able to find a better solution to the pro",
+    date: "2026-11-09",
+    source: "linkedin",
+    summary: "If you know how your car works, you'll always be able to find a better solution to the problem than someone who doesn't know how it works.",
+    body: "If you know how your car works, you'll always be able to find a better solution to the problem than someone who doesn't know how it works. Even if it's not you doing the repairs.\n\nSame goes for AI.\n\nEven if you never write another line of code, it is becoming increasingly important to understand the technical side of artificial intelligence.\n\nLearn about model architecture. Learn about how they are trained. Learn why your agents do what they do. And you will be better off. Trust me",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7525700295616724992/"
+  },
+  {
+    slug: "at-space-tiger-ai-we-are-focused-on-roi-in-terms-of-dollar-b",
+    title: "At Space Tiger AI, we are focused on ROI in terms of dollar bills.",
+    date: "2026-11-09",
+    source: "linkedin",
+    summary: "At Space Tiger AI, we are focused on ROI in terms of dollar bills.",
+    body: "At Space Tiger AI, we are focused on ROI in terms of dollar bills.\n\nThe majority of the AI adoption that I've seen is focused on time-saving or on doing new tasks that weren't possible before AI.\n\nWhile both of those are effective, the goal of any business is to make money, not to be more productive. Check out how we did this for a client:\n\nOur client was on a contract with a marketing agency to write RFPs. They were severely limited by manpower, meaning that the current contract they had for 12 RFPs per month would have them running at max capacity.\n\nWe worked with them to rebuild their workflows from the ground up to be agent-native, which reduced the time needed to write an RFP from about 5 hours to less than 30 minutes.\n\nWhile we did work to increase productivity and reduce time per task, the real win is the money. Because of their increased capacity and accuracy, they were able to renegotiate a new contract with that agency for double what they were making per month with their old agreement. Yes, double.\n\nDM me if you, too, want to make double the amount of money you're making right now. It's that simple.",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7525662061130010625/"
+  },
+  {
+    slug: "keep-saying-no",
+    title: "Keep saying no.",
+    date: "2026-11-06",
+    source: "linkedin",
+    summary: "Keep saying no.",
+    body: "Keep saying no.\n\nThe most important part of a business' strategy is what they say no to.\n\nNot to mention that you know that strategy is working because it enables you to say no to some things instead of yes to everything.\n\nWhat have you said NO to and how did it turn out?",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7524580135623286784/"
+  },
+  {
+    slug: "open-source-is-the-future-anyone-that-tells-you-otherwise-is",
+    title: "Open source is the future. Anyone that tells you otherwise is trying to sell you something",
+    date: "2026-11-05",
+    source: "linkedin",
+    summary: "Open source is the future.",
+    body: "Open source is the future. Anyone that tells you otherwise is trying to sell you something. \n\nThe most transformative technology the world has ever seen was born in the open. I believe it should stay that way. \n\nChatGPT is built on the transformer architecture that Google open-sourced. \n\nMuse from Meta looks a lot like an Open Claw clone that Peter Steinberger open-sourced. \n\nRight now my personal agent setup runs on a mix of open models inside the best open-source harness that there is (Hermes agent). \n\nI strongly believe that owning your own intelligence will only become more important from here on out and I worry that, because closed models are better right now, many people will realize this too late",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7524221786981302272/"
+  },
+  {
     slug: "never-posted-on-linkedin-but-i-thought-that-i-would-share-a",
     title: "Never posted on LinkedIn, but I thought that I would share a few life updates for my first",
     date: "2026-08-06",
