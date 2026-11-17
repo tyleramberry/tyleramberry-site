@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Products — Tyler Amberry</title>
-<meta name="description" content="Six case studies from Tyler Amberry, each told as problem, decisions, and shipped outcome: Space Tiger AI, a grant and RFP agent platform, Sundae Planner, a personal agent harness, Homeroom/MySI, and Utah Valley Yards.">
+<meta name="description" content="Six case studies from Tyler Amberry, each told as problem, decisions, and shipped outcome: Sundae Planner, a grant and RFP agent platform, a personal agent harness, Homeroom/MySI, OpenCal, and Hermes Multiplayer.">
 <meta property="og:title" content="Products — Tyler Amberry">
-<meta property="og:image" content="img/spacetiger.jpg">
+<meta property="og:image" content="img/mysi.jpg">
 <meta name="theme-color" content="#09090b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2309090b'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%234ade80'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,48 +52,51 @@
 
   <div class="toc-bar">
     <nav class="wrap toc" aria-label="Case studies">
-      <a href="#space-tiger"><span>01</span>Space Tiger</a>
+      <a href="#sundae"><span>01</span>Sundae Planner</a>
       <a href="#rfp-agents"><span>02</span>RFP agents</a>
-      <a href="#sundae"><span>03</span>Sundae Planner</a>
-      <a href="#harness"><span>04</span>Agent harness</a>
-      <a href="#homeroom"><span>05</span>Homeroom → MySI</a>
-      <a href="#uvy"><span>06</span>Utah Valley Yards</a>
+      <a href="#harness"><span>03</span>Agent harness</a>
+      <a href="#homeroom"><span>04</span>Homeroom → MySI</a>
+      <a href="#opencal"><span>05</span>OpenCal</a>
+      <a href="#multiplayer"><span>06</span>Hermes Multiplayer</a>
     </nav>
   </div>
 
-  <!-- 01 Space Tiger -->
-  <article class="case wrap reveal" id="space-tiger" aria-labelledby="c1">
+  <!-- 01 Sundae -->
+  <article class="case wrap reveal" id="sundae" aria-labelledby="c1">
     <div class="case-head">
       <div>
-        <p class="eyebrow"><span class="num">01</span> Web design · Space Tiger AI</p>
-        <h2 id="c1">Space Tiger AI website redesign</h2>
-        <p class="sum">A marketing site for an AI systems company whose pitch is AI that's plugged into your own tools and does real work, with a person in the loop.</p>
+        <p class="eyebrow"><span class="num">01</span> Consumer SaaS</p>
+        <h2 id="c1">Sundae Planner</h2>
+        <p class="sum">An AI weekly-planning coach. You talk through the roles you play in life, it helps you plan actions for each one, puts the plan on your Google Calendar, and checks in every day.</p>
       </div>
-      <div class="case-meta"><span class="chip live"><span class="dot" aria-hidden="true"></span>Final design hosted</span></div>
+      <div class="case-meta"><span class="chip live"><span class="dot" aria-hidden="true"></span>Live in production</span></div>
     </div>
-    <a class="thumb" href="work/spacetiger-redesign/" target="_blank" rel="noopener">
-      <img src="img/spacetiger.jpg" alt="Space Tiger AI redesign homepage: bold condensed type and a mission-control dashboard look" loading="lazy" width="1600" height="900">
-      <span class="badge">View the live design <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></span>
-    </a>
+    <div class="thumb ph-thumb" role="img" aria-label="Placeholder thumbnail for Sundae Planner">
+      <div class="ph-inner">
+        <span class="glyph"><svg class="i" aria-hidden="true"><use href="icons.svg#calendar"/></svg></span>
+        <span class="name">sundaeplanner.com</span>
+        <span class="note">Placeholder thumbnail · add img/sundae.jpg</span>
+      </div>
+    </div>
     <div class="pdo">
       <div><h3><span class="step">P</span>Problem</h3>
-        <p>"AI enablement" sounds like every other consultancy. The site had to show what the work feels like and push a visitor toward the one action that matters: booking a call. <span class="ph">[PLACEHOLDER: what specifically was wrong with the old site]</span></p></div>
+        <p>Weekly planning works when you do it, and almost nobody keeps doing it. Planner apps hold your list but never ask you about it, so the plan and the week drift apart by Tuesday.</p></div>
       <div><h3><span class="step">D</span>Decisions</h3>
         <ul>
-          <li><b>Mission control, not chatbot.</b> Bold condensed type and dashboard panels make "AI that does real work" visible instead of just claimed.</li>
-          <li><b>One path.</b> Every section ends at the same call to action.</li>
-          <li><b>Person in the loop, up front.</b> The positioning leads with control, because SMB owners are wary of handing work to AI.</li>
+          <li><b>Nothing touches your calendar until you approve it.</b> The AI proposes; you confirm.</li>
+          <li><b>One function decides "done."</b> Every screen shows the same score because only one piece of code computes it.</li>
+          <li><b>Channel-agnostic engines.</b> Web, email, and text can all use the same conversation brain.</li>
         </ul></div>
       <div class="outcome"><h3><span class="step">O</span>Shipped</h3>
         <ul>
-          <li>A finished static redesign, hosted on this site.</li>
-          <li>The brand pulled into a reusable design-system skill, so decks and docs come out on-brand automatically.</li>
-          <li><span class="ph">[PLACEHOLDER: did it go live on spacetiger.ai? Any booking or traffic change?]</span></li>
+          <li>A conversational weekly session that ends in confirmed calendar blocks.</li>
+          <li>A daily cron that follows up by email and reconciles goals against what happened.</li>
+          <li>Onboarding, trials, Stripe billing, analytics, and a custom domain. 114 commits in its first stretch, from Aug 4, 2026.</li>
         </ul></div>
     </div>
     <div class="case-foot">
-      <p class="stack">HTML · CSS · Bebas Neue / Oswald / JetBrains Mono</p>
-      <a class="text-link" href="work/spacetiger-redesign/" target="_blank" rel="noopener">View the design <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></a>
+      <p class="stack">Next.js 16 · Supabase · Claude API · Google Calendar · Stripe · Resend · Vercel</p>
+      <a class="text-link" href="https://sundaeplanner.com" target="_blank" rel="noopener">sundaeplanner.com <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></a>
     </div>
   </article>
 
@@ -135,51 +138,12 @@
     <div class="case-foot"><p class="stack">Node/Express · React + Vite · Claude API · Supabase · MCP · Railway + Vercel</p></div>
   </article>
 
-  <!-- 03 Sundae -->
-  <article class="case wrap reveal" id="sundae" aria-labelledby="c3">
+  <!-- 03 Harness -->
+  <article class="case wrap reveal" id="harness" aria-labelledby="c3">
     <div class="case-head">
       <div>
-        <p class="eyebrow"><span class="num">03</span> Consumer SaaS</p>
-        <h2 id="c3">Sundae Planner</h2>
-        <p class="sum">An AI weekly-planning coach. You talk through the roles you play in life, it helps you plan actions for each one, puts the plan on your Google Calendar, and checks in every day.</p>
-      </div>
-      <div class="case-meta"><span class="chip live"><span class="dot" aria-hidden="true"></span>Live in production</span></div>
-    </div>
-    <div class="thumb ph-thumb" role="img" aria-label="Placeholder thumbnail for Sundae Planner">
-      <div class="ph-inner">
-        <span class="glyph"><svg class="i" aria-hidden="true"><use href="icons.svg#calendar"/></svg></span>
-        <span class="name">sundaeplanner.com</span>
-        <span class="note">Placeholder thumbnail · add img/sundae.jpg</span>
-      </div>
-    </div>
-    <div class="pdo">
-      <div><h3><span class="step">P</span>Problem</h3>
-        <p>Weekly planning works when you do it, and almost nobody keeps doing it. Planner apps hold your list but never ask you about it, so the plan and the week drift apart by Tuesday.</p></div>
-      <div><h3><span class="step">D</span>Decisions</h3>
-        <ul>
-          <li><b>Nothing touches your calendar until you approve it.</b> The AI proposes; you confirm.</li>
-          <li><b>One function decides "done."</b> Every screen shows the same score because only one piece of code computes it.</li>
-          <li><b>Channel-agnostic engines.</b> Web, email, and text can all use the same conversation brain.</li>
-        </ul></div>
-      <div class="outcome"><h3><span class="step">O</span>Shipped</h3>
-        <ul>
-          <li>A conversational weekly session that ends in confirmed calendar blocks.</li>
-          <li>A daily cron that follows up by email and reconciles goals against what happened.</li>
-          <li>Onboarding, trials, Stripe billing, analytics, and a custom domain. 114 commits in its first stretch, from Aug 4, 2026.</li>
-        </ul></div>
-    </div>
-    <div class="case-foot">
-      <p class="stack">Next.js 16 · Supabase · Claude API · Google Calendar · Stripe · Resend · Vercel</p>
-      <a class="text-link" href="https://sundaeplanner.com" target="_blank" rel="noopener">sundaeplanner.com <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></a>
-    </div>
-  </article>
-
-  <!-- 04 Harness -->
-  <article class="case wrap reveal" id="harness" aria-labelledby="c4">
-    <div class="case-head">
-      <div>
-        <p class="eyebrow"><span class="num">04</span> Personal AI system</p>
-        <h2 id="c4">Personal agent harness</h2>
+        <p class="eyebrow"><span class="num">03</span> Personal AI system</p>
+        <h2 id="c3">Personal agent harness</h2>
         <p class="sum">A personal operating system I own: a markdown library of everything I know, skills (written procedures an agent follows), scheduled jobs, and a team of agents that ships software.</p>
       </div>
       <div class="case-meta"><span class="chip">Daily use</span></div>
@@ -219,12 +183,12 @@
     <div class="case-foot"><p class="stack">Markdown + Obsidian · Claude Code · Codex · Hermes · cron · Python · MCP</p><span class="chip">Personal data stays private</span></div>
   </article>
 
-  <!-- 05 Homeroom -->
-  <article class="case wrap reveal" id="homeroom" aria-labelledby="c5">
+  <!-- 04 Homeroom -->
+  <article class="case wrap reveal" id="homeroom" aria-labelledby="c4">
     <div class="case-head">
       <div>
-        <p class="eyebrow"><span class="num">05</span> MSB 341 product · BYU Marriott</p>
-        <h2 id="c5">Homeroom → MySI</h2>
+        <p class="eyebrow"><span class="num">04</span> MSB 341 product · BYU Marriott</p>
+        <h2 id="c4">Homeroom → MySI</h2>
         <p class="sum">Homeroom began as an education-focused agent harness: your syllabi, deadlines, and rubrics in, a tutored and rubric-checked draft out. Discovery pushed it somewhere better: MySI, a benchmark built from your own work.</p>
       </div>
       <div class="case-meta"><span class="chip live"><span class="dot" aria-hidden="true"></span>MySI prototype live</span></div>
@@ -256,40 +220,84 @@
     </div>
   </article>
 
-  <!-- 06 UVY -->
-  <article class="case wrap reveal" id="uvy" aria-labelledby="c6">
+  <!-- 05 OpenCal -->
+  <article class="case wrap reveal" id="opencal" aria-labelledby="c5">
     <div class="case-head">
       <div>
-        <p class="eyebrow"><span class="num">06</span> Owned business · Operations</p>
-        <h2 id="c6">Utah Valley Yards ops</h2>
-        <p class="sum">Running a lawn-care company with one employee and a book of recurring clients, and treating the operation itself as a product.</p>
+        <p class="eyebrow"><span class="num">05</span> Open-source SaaS</p>
+        <h2 id="c5">OpenCal</h2>
+        <p class="sum">Free, open-source pickup booking: a TidyCal-style scheduler you host yourself. Clients open your link, tap a pickup time, leave their contact info, and it's booked — on your Google Calendar, never double-booked.</p>
       </div>
-      <div class="case-meta"><span class="chip draft">Write-up in progress</span></div>
+      <div class="case-meta"><span class="chip"><span class="dot" aria-hidden="true"></span>In progress</span></div>
     </div>
-    <div class="thumb ph-thumb" role="img" aria-label="Placeholder thumbnail for Utah Valley Yards">
+    <div class="thumb ph-thumb" role="img" aria-label="Placeholder thumbnail for OpenCal">
       <div class="ph-inner">
-        <span class="glyph"><svg class="i" aria-hidden="true"><use href="icons.svg#leaf"/></svg></span>
-        <span class="name">Utah Valley Yards</span>
-        <span class="note">Placeholder thumbnail · add a crew or route photo</span>
+        <span class="glyph"><svg class="i" aria-hidden="true"><use href="icons.svg#calendar"/></svg></span>
+        <span class="name">github.com/tyleramberry/opencal</span>
+        <span class="note">Placeholder thumbnail · add a booking-flow screenshot</span>
       </div>
     </div>
     <div class="pdo">
       <div><h3><span class="step">P</span>Problem</h3>
-        <p>A service business lives or dies on boring details: who's due this week, what the crew does at each stop, and which quotes never got a follow-up. <span class="ph">[PLACEHOLDER: the specific ops pain you hit first]</span></p></div>
+        <p>Small businesses pay monthly for a booking link that only does one thing. A bakery needed clients to book order pickups — one link, one 30-minute pickup type, a weekly handout schedule — without paying a subscription for it.</p></div>
       <div><h3><span class="step">D</span>Decisions</h3>
         <ul>
-          <li><b>Stay small and stable</b> while school and Space Tiger get the growth hours.</li>
-          <li><span class="ph">[PLACEHOLDER: how you set pricing]</span></li>
-          <li><span class="ph">[PLACEHOLDER: how you plan routes and schedule the crew]</span></li>
+          <li><b>Study the incumbent, copy nothing.</b> Built after studying TidyCal's public booking flow with a behavior-recording agent — behavior only, no copied code.</li>
+          <li><b>You host it.</b> One shareable link per business (<code>/&lt;name&gt;/pickup</code>), self-hosted, MIT licensed.</li>
+          <li><b>Real calendar, race-safe.</b> Google Calendar busy times block slots in real time; bookings serialize on a Postgres advisory lock so two people can't claim the last slot.</li>
+          <li><b>Phone required.</b> Name, email, and phone on every booking, so the owner can call about an order.</li>
         </ul></div>
       <div class="outcome"><h3><span class="step">O</span>Shipped</h3>
         <ul>
-          <li>A stable recurring-revenue business run by two people.</li>
-          <li>Three tool ideas pulled straight from the route: crew slips, a due book, and quote follow-up.</li>
-          <li><span class="ph">[PLACEHOLDER: a number you're comfortable publishing, e.g. client retention]</span></li>
+          <li>Month calendar with 30-minute slots, confirmation page with "Add to calendar" (.ics) and self-serve cancel links.</li>
+          <li>Optional confirmation and cancellation emails with the invite attached (Resend), plus the pickup address on every surface.</li>
+          <li>Admin at <code>/admin</code>: set hours and address, copy your link, see and cancel pickups.</li>
+          <li>Deploys to Cloudflare Workers with a hosted Postgres, or runs locally on embedded PGlite. <span class="ph">[PLACEHOLDER: live demo link once deployed]</span></li>
         </ul></div>
     </div>
-    <div class="case-foot"><p class="stack">Owner-operator · 1 employee · recurring clients</p></div>
+    <div class="case-foot">
+      <p class="stack">Next.js · TypeScript · Google Calendar API · Postgres (PGlite / Supabase) · Resend · Cloudflare Workers · MIT</p>
+      <a class="text-link" href="https://github.com/tyleramberry/opencal" target="_blank" rel="noopener">GitHub <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></a>
+    </div>
+  </article>
+
+  <!-- 06 Hermes Multiplayer -->
+  <article class="case wrap reveal" id="multiplayer" aria-labelledby="c6">
+    <div class="case-head">
+      <div>
+        <p class="eyebrow"><span class="num">06</span> Open-source plugin · Nous Research hackathon</p>
+        <h2 id="c6">Hermes Multiplayer</h2>
+        <p class="sum">Team chat inside Hermes: channels, DMs, and threads for you, up to four teammates, and everyone's Hermes agents — and the agents read and post in them right alongside you.</p>
+      </div>
+      <div class="case-meta"><span class="chip live"><span class="dot" aria-hidden="true"></span>Listed in the plugin catalog</span></div>
+    </div>
+    <a class="thumb ph-thumb" href="https://tyleramberry.github.io/hermes-multiplayer/" target="_blank" rel="noopener" aria-label="Install Hermes Multiplayer">
+      <div class="ph-inner">
+        <span class="glyph"><svg class="i" aria-hidden="true"><use href="icons.svg#github"/></svg></span>
+        <span class="name">tyleramberry.github.io/hermes-multiplayer</span>
+        <span class="note">Placeholder thumbnail · add a chat screenshot</span>
+      </div>
+    </a>
+    <div class="pdo">
+      <div><h3><span class="step">P</span>Problem</h3>
+        <p>Agents work alone. A team's Hermes agents couldn't see each other's work, and coordinating a shared build meant screenshots and copy-paste between people who each had a private agent.</p></div>
+      <div><h3><span class="step">D</span>Decisions</h3>
+        <ul>
+          <li><b>Agents are first-class members.</b> Your agent reads the channels, posts progress, and joins threads — the chat is a shared surface for humans and agents, not a human-only feed.</li>
+          <li><b>Your team owns the relay.</b> Whoever runs a relay can read its messages, so there is no shared public relay: each team deploys its own on Cloudflare's free plan, in about ten minutes.</li>
+          <li><b>One-click install.</b> Ships as a Hermes plugin with a <code>hermes://</code> install deep link; setup is install → relay once per team → invite.</li>
+        </ul></div>
+      <div class="outcome"><h3><span class="step">O</span>Shipped</h3>
+        <ul>
+          <li>Built for the Nous Research Hermes Agent Plugin Hackathon (Nov 2026) and listed in the Hermes plugin catalog.</li>
+          <li>Channels, direct messages, and threads, with invites by clipboard.</li>
+          <li>A Cloudflare Workers relay that holds messages while a laptop is closed, plus an install page and full non-technical setup docs.</li>
+        </ul></div>
+    </div>
+    <div class="case-foot">
+      <p class="stack">Python · Hermes plugin tools · Cloudflare Workers relay · plugin.yaml</p>
+      <a class="text-link" href="https://github.com/tyleramberry/hermes-multiplayer" target="_blank" rel="noopener">GitHub <svg class="i i-sm" aria-hidden="true"><use href="icons.svg#ext"/></svg></a>
+    </div>
   </article>
 
   <section class="wrap" style="border-top:1px solid var(--line)">
