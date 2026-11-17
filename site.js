@@ -24,7 +24,7 @@
   var TICKER = [
     ["Portfolio", "rebuilt as a static, AI-native site. No framework, no build step"],
     ["My SI", "first outside tester went from interview to one winning model in ~15 min, for $0.07"],
-    ["Second brain", "160 linked pages, 24 agent skills, 7 scheduled jobs"],
+    ["Second brain", "350 linked pages, 128 agent skills, 7 scheduled jobs"],
     ["Sundae Planner", "live in production at sundaeplanner.com"],
     ["Space Tiger AI", "Blueprint-call prep turned into a one-command hypothesis-doc skill"],
     ["Hermes", "5-agent software factory. Nothing ships until QA signs off"]
