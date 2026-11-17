@@ -273,11 +273,12 @@
     initReveal();
     initPalette();
   }
-  // mailto fails silently with no mail app set up, so every email link also copies the address
+  // Email links copy the address and show a toast instead of opening a mail app
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
     if (!a || !navigator.clipboard) return;
-    navigator.clipboard.writeText(EMAIL).then(function () { toast("Email copied: " + EMAIL); }, function () {});
+    e.preventDefault();
+    navigator.clipboard.writeText(EMAIL).then(function () { toast("Email copied"); }, function () { window.location.href = a.href; });
   });
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
