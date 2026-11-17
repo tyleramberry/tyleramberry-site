@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Writing — every post on the site lives in this one array.
+   Writing, every post on the site lives in this one array.
    How to add a post: see writing/README.md. No build step; save and refresh.
    Populated from X (@tyler_amberry) and LinkedIn (Tyler Amberry), Nov 2026.
    ========================================================================== */

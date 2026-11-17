@@ -99,7 +99,7 @@
 
   function renderPost(root, p) {
     var s = SOURCES[p.source] || SOURCES.essay;
-    document.title = p.title + " — Tyler Amberry";
+    document.title = p.title + " | Tyler Amberry";
     root.innerHTML =
       '<article class="article wrap"><div class="article-inner">' +
         '<a class="text-link back" href="writing.html">' + icon("arrow-left", "i-sm") + "All writing</a>" +
