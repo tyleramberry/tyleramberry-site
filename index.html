@@ -17,6 +17,7 @@
 <script>document.documentElement.classList.add("js")</script>
 <script src="writing/posts.js" defer></script>
 <script src="site.js" defer></script>
+<script src="intro.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -44,11 +45,24 @@
 
 <main id="main">
 
+  <!-- Scroll intro -->
+  <section class="intro" data-intro aria-label="Intro">
+    <div class="intro-stage">
+      <h2 class="intro-word serif" aria-live="off">
+        <span class="w is-on">Tyler Amberry</span>
+        <span class="w">strategy student</span>
+        <span class="w">founding FDE</span>
+        <span class="w">I <em>ship</em> with agents</span>
+      </h2>
+      <p class="intro-hint mono"><span class="dot" aria-hidden="true"></span> scroll</p>
+    </div>
+  </section>
+
   <!-- Hero -->
   <section class="wrap hero" aria-labelledby="hero-title">
     <div>
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span> AI-native builder · Provo, UT</p>
-      <h1 id="hero-title">Strategy student.<br>Founding FDE.<br>I <em>ship</em> with agents.</h1>
+      <h1 id="hero-title"><span class="ln">Strategy student.</span><br><span class="ln">Founding FDE.</span><br><span class="ln">I <em>ship</em> with agents.</span></h1>
       <p class="sub">I'm Tyler Amberry. I study business strategy at BYU Marriott, and I run operations at Space Tiger AI, where I joined as the founding forward-deployed engineer. Building with AI is what I love doing.</p>
       <div class="actions">
         <a class="btn primary" href="products.html">See what I've shipped <svg class="i i-arrow" aria-hidden="true"><use href="icons.svg#arrow"/></svg></a>
