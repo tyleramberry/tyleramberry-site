@@ -119,7 +119,7 @@
     { g: "Pages", t: "Writing", h: "writing.html", i: "pen", k: "blog posts essays x linkedin" },
     { g: "Case studies", t: "Sundae Planner", h: "products.html#sundae", i: "calendar", k: "weekly planning coach saas" },
     { g: "Case studies", t: "Grant and RFP agent team", h: "products.html#rfp-agents", i: "layers", k: "govcon contracting orchestrator" },
-    { g: "Case studies", t: "Personal agent harness", h: "products.html#harness", i: "cpu", k: "second brain buzz software factory cfo" },
+    { g: "Case studies", t: "Personal super intelligence", h: "products.html#harness", i: "cpu", k: "second brain buzz software factory cfo harness" },
     { g: "Case studies", t: "Homeroom to MySI", h: "products.html#homeroom", i: "cap", k: "msb 341 student benchmark models" },
     { g: "Case studies", t: "OpenCal", h: "products.html#opencal", i: "calendar", k: "open source booking pickup scheduler tidycal" },
     { g: "Case studies", t: "Hermes Multiplayer", h: "products.html#multiplayer", i: "command", k: "team chat relay plugin hackathon" },
