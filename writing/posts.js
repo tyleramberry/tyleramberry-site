@@ -263,5 +263,65 @@ window.POSTS = [
     summary: "Quick reality check: You're not falling behind in AI. A former silicon valley exec I met just told me how he discovered ",
     body: "Quick reality check: You're not falling behind in AI. A former silicon valley exec I met just told me how he discovered \nhttps://\nlovable.dev and can't wait to see how it helps his new firm.",
     url: "https://x.com/tyler_amberry/status/2118080475948515498"
+  },
+  {
+    slug: "nous-is-different",
+    title: "Nous is different",
+    date: "2026-11-07",
+    source: "x",
+    summary: "Nous is different.",
+    body: `Nous is different.`,
+    url: "https://x.com/tyler_amberry/status/2119182121646592099"
+  },
+  {
+    slug: "is-deepseek-v4-1-in-hermes-agent-being-incredibly-slow-rn",
+    title: "Is deepseek v4.1 in Hermes agent being incredibly slow rn for anyone else?",
+    date: "2026-11-10",
+    source: "x",
+    summary: "Is deepseek v4.1 in Hermes agent being incredibly slow rn for anyone else?",
+    body: `Is deepseek v4.1 in Hermes agent being incredibly slow rn for anyone else?`,
+    url: "https://x.com/tyler_amberry/status/2120385744569323996"
+  },
+  {
+    slug: "so-what-you-re-saying-is-the-best-moats-remain-the-best-moats",
+    title: "So what you’re saying is the best moats remain the best moats even with AI?",
+    date: "2026-11-10",
+    source: "x",
+    summary: "So what you’re saying is the best moats remain the best moats even with AI?",
+    body: `So what you’re saying is the best moats remain the best moats even with AI?`,
+    url: "https://x.com/tyler_amberry/status/2120281599346651314"
+  },
+  {
+    slug: "hermes-agent-is-finally-multiplayer",
+    title: "Hermes agent is finally multiplayer",
+    date: "2026-11-11",
+    source: "x",
+    summary: "Hermes agent is finally multiplayer! Your team, your agents, your room.",
+    body: `1/ Hermes agent is finally multiplayer!
+
+Your team, your agents, your room.
+
+Install in one click: https://hermes-multiplayer-relay.homeroom-app.workers.dev/install
+
+This is my entry for the Hermes Agent Plugin Hackathon @NousResearch @Teknium
+
+Code: https://github.com/tyleramberry/hermes-multiplayer
+PR: https://github.com/NousResearch/hermes-agent/pull/153148
+
+2/ How to set it up:
+
+Install: click “Install in Hermes” on the page, then confirm in Hermes.
+Terminal: hermes plugins install tyleramberry/hermes-multiplayer --enable
+Open Hermes Multiplayer in the sidebar → Invite a teammate → send them the invite.
+They paste it in. Done.
+
+3/ What you get:
+
+- Channels, DMs and threads, synced across up to 5 machines
+- Your agent reads and posts, marked by an “agent” badge
+- @ your agent and it answers (one click to set up)
+- Search, topics, emoji and markdown
+- No server to host.`,
+    url: "https://x.com/tyler_amberry/status/2120617127568961879"
   }
 ];
