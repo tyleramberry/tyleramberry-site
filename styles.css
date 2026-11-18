@@ -839,6 +839,42 @@ a.thumb:hover img { transform: scale(1.015); opacity: 1; }
   .palette-backdrop { padding-top: 12px; }
 }
 
+/* ---------- Message Tyler dialog ---------- */
+.msg-backdrop { align-items: center; padding-block: 16px; }
+.msg { max-width: 560px; max-height: none; }
+.msg-head { display: flex; align-items: center; gap: 12px; padding: 0 8px 0 18px; min-height: 56px; border-bottom: 1px solid var(--line); }
+.msg-head > .i { color: var(--live); }
+.msg-head h2 { font: 500 15px var(--sans); letter-spacing: -.005em; color: var(--ink); margin: 0; }
+.msg-x { margin-left: auto; width: var(--hit); height: var(--hit); display: inline-flex; align-items: center; justify-content: center; border-radius: 9px; color: var(--muted); }
+.msg-x:hover { background: #18181c; color: var(--ink); }
+.msg-body { padding: 18px; display: grid; gap: 14px; }
+.msg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.msg-field { display: grid; gap: 7px; }
+.msg-field > span { font: 400 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.msg-field > span em { font-style: normal; text-transform: none; letter-spacing: 0; color: var(--faint); margin-left: 4px; }
+.msg-field textarea, .msg-field input {
+  width: 100%; background: var(--bg); border: 1px solid var(--line-2); border-radius: 10px;
+  padding: 11px 13px; font: 400 14.5px/1.5 var(--sans); color: var(--ink); outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.msg-field input { min-height: var(--hit); }
+.msg-field textarea { resize: vertical; min-height: 120px; }
+.msg-field textarea::placeholder { color: var(--faint); }
+.msg-field textarea:focus, .msg-field input:focus { border-color: #3f3f46; box-shadow: 0 0 0 3px var(--live-dim); }
+.msg-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.msg-status { min-height: 1.2em; margin: 0; font: 400 12.5px var(--mono); color: var(--muted); }
+.msg-status:empty { display: none; }
+.msg-status.err { color: var(--miss); }
+.msg-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 12px 12px 18px; border-top: 1px solid var(--line); }
+.msg-hint { display: inline-flex; align-items: center; gap: 6px; font: 400 11px var(--mono); color: var(--faint); }
+.msg.sending .btn.primary { opacity: .6; cursor: progress; }
+@media (max-width: 520px) {
+  .msg-backdrop { align-items: flex-start; padding-top: 12px; }
+  .msg-row { grid-template-columns: 1fr; }
+  .msg-hint { display: none; }
+  .msg-foot .btn { flex: 1; }
+}
+
 /* ==========================================================================
    Reduced motion
    ========================================================================== */

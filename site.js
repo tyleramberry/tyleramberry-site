@@ -122,6 +122,7 @@
     { g: "Case studies", t: "My SI", h: "products.html#mysi", i: "cap", k: "msb 341 student benchmark models" },
     { g: "Case studies", t: "OpenCal", h: "products.html#opencal", i: "calendar", k: "open source booking pickup scheduler tidycal" },
     { g: "Case studies", t: "Hermes Multiplayer", h: "products.html#multiplayer", i: "command", k: "team chat relay plugin hackathon" },
+    { g: "Contact", t: "Message Tyler", a: "message", i: "send", k: "contact hire note comment email send" },
     { g: "Contact", t: "Email Tyler", h: "mailto:" + EMAIL, i: "mail", k: "contact hire" },
     { g: "Contact", t: "Copy email address", a: "copy", i: "copy", k: "contact clipboard", hint: EMAIL },
     { g: "Contact", t: "GitHub", h: "https://github.com/tyleramberry", i: "github", k: "code", ext: true }
@@ -207,6 +208,7 @@
 
     function run(c) {
       if (!c) return;
+      if (c.a === "message") { close(); setTimeout(openMessage, reduceMotion ? 0 : 170); return; }
       if (c.a === "copy") {
         var done = function () { close(); toast("Email copied"); };
         if (navigator.clipboard) navigator.clipboard.writeText(EMAIL).then(done, function () { window.location.href = "mailto:" + EMAIL; });
@@ -265,6 +267,108 @@
     if (!isMac) document.querySelectorAll("[data-mod]").forEach(function (el) { el.textContent = "Ctrl K"; });
   }
 
+  /* ------------------------------------------------------------------
+     Message Tyler: small dialog that POSTs to /api/message (Resend)
+     ------------------------------------------------------------------ */
+  var msgBack = null, msgLast = null, msgOpenedAt = 0;
+
+  function buildMessage() {
+    msgBack = document.createElement("div");
+    msgBack.className = "palette-backdrop msg-backdrop";
+    msgBack.hidden = true;
+    msgBack.innerHTML =
+      '<form class="palette msg" role="dialog" aria-modal="true" aria-labelledby="msg-title" novalidate>' +
+        '<div class="msg-head">' + icon("send") + '<h2 id="msg-title">Message Tyler</h2>' +
+          '<button type="button" class="msg-x" aria-label="Close">' + icon("close") + "</button></div>" +
+        '<div class="msg-body">' +
+          '<label class="msg-field"><span>Message</span>' +
+            '<textarea name="message" rows="5" maxlength="5000" required placeholder="What\'s on your mind?"></textarea></label>' +
+          '<div class="msg-row">' +
+            '<label class="msg-field"><span>Name <em>optional</em></span><input name="name" type="text" maxlength="120" autocomplete="name"></label>' +
+            '<label class="msg-field"><span>Your email <em>optional, so I can reply</em></span><input name="email" type="email" maxlength="200" autocomplete="email" inputmode="email"></label>' +
+          "</div>" +
+          '<label class="msg-hp" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>' +
+          '<p class="msg-status" role="status" aria-live="polite"></p>' +
+        "</div>" +
+        '<div class="msg-foot"><span class="msg-hint"><kbd data-mod-enter>⌘</kbd><kbd>↵</kbd> send</span>' +
+          '<button type="submit" class="btn primary">' + icon("send") + "<span>Send</span></button></div>" +
+      "</form>";
+    document.body.appendChild(msgBack);
+
+    var form = msgBack.querySelector("form");
+    var ta = form.querySelector("textarea");
+    var status = form.querySelector(".msg-status");
+    var btn = form.querySelector('button[type="submit"]');
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+    if (!isMac) form.querySelector("[data-mod-enter]").textContent = "Ctrl";
+
+    function setStatus(t, kind) { status.textContent = t || ""; status.className = "msg-status" + (kind ? " " + kind : ""); }
+
+    form.querySelector(".msg-x").addEventListener("click", closeMessage);
+    msgBack.addEventListener("mousedown", function (e) { if (e.target === msgBack) closeMessage(); });
+    form.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { e.preventDefault(); closeMessage(); return; }
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); return; }
+      if (e.key === "Tab") { // keep focus inside the dialog
+        var f = Array.prototype.filter.call(form.querySelectorAll("textarea, input:not([tabindex='-1']), button"), function (el) { return !el.disabled; });
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (btn.disabled) return;
+      var data = {
+        message: ta.value.trim(),
+        name: form.elements.name.value.trim(),
+        email: form.elements.email.value.trim(),
+        website: form.elements.website.value,
+        page: location.pathname + location.hash,
+        t: Date.now() - msgOpenedAt
+      };
+      if (data.message.length < 2) { setStatus("Write a message first.", "err"); ta.focus(); return; }
+      if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { setStatus("That email doesn't look right.", "err"); form.elements.email.focus(); return; }
+      btn.disabled = true; form.classList.add("sending"); setStatus("Sending…");
+      fetch("/api/message", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().catch(function () { return { ok: false }; }).then(function (j) { return { r: r, j: j }; }); })
+        .then(function (x) {
+          if (x.r.ok && x.j.ok) {
+            form.reset(); closeMessage(); toast("Sent. Tyler will see it soon");
+          } else {
+            setStatus((x.j && x.j.error) || "Couldn't send right now. Email " + EMAIL + " instead.", "err");
+          }
+        })
+        .catch(function () { setStatus("Couldn't send right now. Email " + EMAIL + " instead.", "err"); })
+        .then(function () { btn.disabled = false; form.classList.remove("sending"); });
+    });
+  }
+
+  function openMessage() {
+    if (!msgBack) buildMessage();
+    if (!msgBack.hidden) return;
+    msgLast = document.activeElement;
+    msgOpenedAt = Date.now();
+    msgBack.querySelector(".msg-status").textContent = "";
+    msgBack.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    requestAnimationFrame(function () { msgBack.classList.add("show"); msgBack.querySelector("textarea").focus(); });
+  }
+  function closeMessage() {
+    if (!msgBack || msgBack.hidden) return;
+    msgBack.classList.remove("show");
+    document.documentElement.style.overflow = "";
+    setTimeout(function () { msgBack.hidden = true; }, reduceMotion ? 0 : 160);
+    if (msgLast && msgLast.focus) msgLast.focus();
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-message]");
+    if (!b) return;
+    e.preventDefault();
+    openMessage();
+  });
+
   /* ------------------------------------------------------------------ */
   function boot() {
     initNav();
@@ -284,5 +388,5 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
 
-  window.Site = { icon: icon, esc: esc };
+  window.Site = { icon: icon, esc: esc, message: openMessage };
 })();
