@@ -17,31 +17,48 @@
   window.scrollTo(0, 0);
   root.classList.add("intro-lock");
   var words = intro.querySelectorAll(".w"), n = words.length, idx = 0, busy = false, done = false;
-  var STEP_MS = 850, quietTimer = null;
+  var STEP_MS = 650, lastStep = 0, pending = 0;
   function show(i) {
     words.forEach(function (w, j) { w.classList.toggle("is-on", j === i); w.classList.toggle("is-past", j < i); });
   }
   function step(dir) {
-    if (busy || done) return;
+    if (done) return;
+    if (busy) { pending = dir; return; } // remember it instead of dropping the gesture
     if (dir < 0) { if (idx === 0) return; idx--; }
     else if (idx === n - 1) { done = true; cleanup(); finish(false); return; }
     else idx++;
     intro.classList.add("is-scrolled");
     show(idx);
-    busy = true;
-    setTimeout(function () { busy = false; }, STEP_MS);
+    busy = true; lastStep = Date.now();
+    setTimeout(function () {
+      busy = false;
+      if (pending) { var d = pending; pending = 0; step(d); }
+    }, STEP_MS);
   }
-  // A fast trackpad flick fires dozens of wheel events: take one step, then ignore
-  // the rest until the gesture goes quiet AND the step animation has played.
-  var gestureLive = false;
+  // Trackpads keep firing "momentum" wheel events for a second or two after a flick.
+  // Those must not count as new steps, but a real new swipe must never be swallowed.
+  // After each step we wait for a fresh gesture: a pause in events, a clear jump in
+  // speed (a new swipe on top of the momentum tail), or a direction change.
+  var acc = 0, lastT = 0, lastAbs = 0, lastSign = 0, needFresh = false;
   function onWheel(e) {
     e.preventDefault();
-    if (Math.abs(e.deltaY) < 4) return;
-    clearTimeout(quietTimer);
-    quietTimer = setTimeout(function () { gestureLive = false; }, 180);
-    if (gestureLive) return;
-    gestureLive = true;
-    step(e.deltaY > 0 ? 1 : -1);
+    var d = e.deltaY;
+    if (e.deltaMode === 1) d *= 16; else if (e.deltaMode === 2) d *= window.innerHeight;
+    var now = Date.now(), abs = Math.abs(d), sign = d > 0 ? 1 : d < 0 ? -1 : 0;
+    var gap = now - lastT;
+    if (sign === 0) return;
+    var fresh = gap > 140 || sign !== lastSign || abs > lastAbs * 1.6 + 6;
+    lastT = now; lastAbs = abs; lastSign = sign;
+    if (needFresh) {
+      if (!fresh) return; // still the momentum tail of the last swipe
+      needFresh = false; acc = 0;
+    }
+    acc += d; // if a step is still animating, step() queues this one instead of dropping it
+    if (Math.abs(acc) >= 24) {
+      var dir = acc > 0 ? 1 : -1;
+      acc = 0; needFresh = true;
+      step(dir);
+    }
   }
   var ty = null;
   function onTouchStart(e) { ty = e.touches[0].clientY; }
@@ -51,6 +68,7 @@
     var dy = ty - e.changedTouches[0].clientY; ty = null;
     if (Math.abs(dy) > 30) step(dy > 0 ? 1 : -1);
   }
+  function onClick() { step(1); }
   function onKey(e) {
     var k = e.key;
     if (["ArrowDown", "PageDown", " ", "Enter"].indexOf(k) > -1) { e.preventDefault(); step(1); }
@@ -63,11 +81,13 @@
     window.removeEventListener("touchmove", onTouchMove);
     window.removeEventListener("touchend", onTouchEnd);
     window.removeEventListener("keydown", onKey, true);
+    intro.removeEventListener("click", onClick);
   }
   window.addEventListener("wheel", onWheel, { passive: false });
   window.addEventListener("touchstart", onTouchStart, { passive: true });
   window.addEventListener("touchmove", onTouchMove, { passive: false });
   window.addEventListener("touchend", onTouchEnd, { passive: true });
   window.addEventListener("keydown", onKey, true);
+  intro.addEventListener("click", onClick);
   show(0);
 })();
