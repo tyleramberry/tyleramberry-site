@@ -709,7 +709,9 @@ a.thumb:hover img { transform: scale(1.015); opacity: 1; }
   font-size: 13px; color: var(--muted); border-radius: 8px; transition: color .15s, background-color .15s;
 }
 .foot-links a:hover { color: var(--ink); background: var(--bg-3); }
-.foot-meta { font: 400 11.5px var(--mono); color: var(--faint); display: flex; align-items: center; gap: 10px; }
+.foot-meta { font: 400 11.5px var(--mono); color: var(--faint); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.foot-pr { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; color: var(--muted); transition: color .15s; }
+.foot-pr:hover { color: var(--live); }
 
 /* ==========================================================================
    Command palette

@@ -125,6 +125,7 @@
     { g: "Case studies", t: "Hermes Multiplayer", h: "products.html#multiplayer", i: "command", k: "team chat relay plugin hackathon" },
     { g: "Contact", t: "Message Tyler", a: "message", i: "send", k: "contact hire note comment email send" },
     { g: "Contact", t: "Email Tyler", h: "mailto:" + EMAIL, i: "mail", k: "contact hire" },
+    { g: "Contact", t: "Suggest an idea for this site", h: "https://github.com/tyleramberry/tyleramberry-site", i: "github", k: "pull request pr contribute github idea feedback" },
     { g: "Contact", t: "Copy email address", a: "copy", i: "copy", k: "contact clipboard", hint: EMAIL },
     { g: "Contact", t: "GitHub", h: "https://github.com/tyleramberry", i: "github", k: "code", ext: true }
     // TODO(Tyler): add LinkedIn once the profile URL is confirmed.
